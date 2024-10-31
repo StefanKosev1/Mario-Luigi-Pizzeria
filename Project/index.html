@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Pizzeria</h1>
+        <p>Delicious handcrafted pizzas made just for you!</p>
+    </header>
+    <main>
+        <section class="menu">
+            <h2>Our Menu</h2>
+            <!-- Pizza items with click event to trigger popup -->
+            <div class="pizza-card" onclick="showPopup('Margherita', 'Tomato, Mozzarella, Basil', 10)">
+                <h3>Margherita</h3>
+                <p>Tomato, Mozzarella, Basil</p>
+                <span>$10.00</span>
+            </div>
+            <div class="pizza-card" onclick="showPopup('Pepperoni', 'Pepperoni, Tomato, Mozzarella', 12)">
+                <h3>Pepperoni</h3>
+                <p>Pepperoni, Tomato, Mozzarella</p>
+                <span>$12.00</span>
+            </div>
+            <div class="pizza-card" onclick="showPopup('Vegetarian', 'Bell Peppers, Onions, Olives, Mushrooms', 11)">
+                <h3>Vegetarian</h3>
+                <p>Bell Peppers, Onions, Olives, Mushrooms</p>
+                <span>$11.00</span>
+            </div>
+        </section>
+        <a href="order.html" class="order-button">Order Now</a>
+    </main>
+
+    <!-- Popup Modal -->
+    <div id="pizzaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h3 id="modalPizzaName">Pizza Name</h3>
+            <p id="modalPizzaDescription">Description</p>
+            <span id="modalPizzaPrice">$0.00</span>
+            <h4>Add Extra Toppings:</h4>
+            <label><input type="checkbox" name="extra" value="Cheese"> Extra Cheese (+$1)</label><br>
+            <label><input type="checkbox" name="extra" value="Olives"> Olives (+$1)</label><br>
+            <label><input type="checkbox" name="extra" value="Pepperoni"> Pepperoni (+$1.5)</label><br>
+            <button class="submit-button">Add to Order</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
